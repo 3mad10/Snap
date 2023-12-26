@@ -1,0 +1,7 @@
+numpy>=1.22.4,<1.24.0
+keyboard>=0.13.5,>0.13.6
+PyQt5
+opencv-python
+pandas
+matplotlib
+mouse
