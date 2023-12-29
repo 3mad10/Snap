@@ -101,6 +101,7 @@ class Labeler:
         if self.labelStreamerActive:
             # update the current label
             self.streamLabels(__startStream__ = False)
+        
         # return current selected label
         return self.labelList[self.currentLabelIndex]
     
