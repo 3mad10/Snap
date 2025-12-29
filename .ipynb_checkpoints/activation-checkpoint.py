@@ -1,6 +1,6 @@
 import mouse
 import time
-from abc import abstractmethod
+from abc import ABC, abstractmethod
 import keyboard
 
 class Activator:
@@ -50,11 +50,11 @@ class Activator:
         Sequence capture active for given number of minutes
         """
         self.active = True
-        if (not hasattr(Activator, 'start')) or (Activator.start == 0):  
-            Activator.start =  time.time()
-        if((time.time() - Activator.start) >= (minutes * 60)):
+        if (not hasattr(mouseActivator, 'start')) or (mouseActivator.start == 0):  
+            mouseActivator.start =  time.time()
+        if((time.time() - mouseActivator.start) >= (minutes * 60)):
             self.active = False
-            Activator.start = 0
+            mouseActivator.start = 0
         return self.active
     
     

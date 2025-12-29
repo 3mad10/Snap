@@ -7,6 +7,7 @@ class Labeler:
         self.currentLabelIndex = 0
         # inactivate label stream functionality
         self.labelStreamerActive = False
+        self.streamerCurrentTime = None
         # initialize labels list
         if not labelList:
             self.labelList = []
@@ -19,7 +20,6 @@ class Labeler:
         
         Parameters
         ----------
-        None
         """
         if self.labelList:
             # return the label list
@@ -51,7 +51,7 @@ class Labeler:
             self.labelList.append(label)
             return True
     
-    def changeLabelPlace(self, label = None, newPlace = None):
+    def changeLabelPlace(self, label=None, newPlace=None):
         # check if the label is not None
         if not label:
             return False
@@ -66,7 +66,7 @@ class Labeler:
             self.labelList.insert(newPlace, label)
             return True
         
-    def setCurrentLabel(self, label = None, ID = None):
+    def setCurrentLabel(self, label=None, ID=None):
         # check if there is a label or an ID are provided
         if not (label or ID):
             return False
@@ -74,7 +74,7 @@ class Labeler:
         if label and ID:
             return False
         # if label is not None set current label
-        if isinstance(label,str):
+        if isinstance(label, str):
             # try to get the current label index
             try:
                 self.currentLabelIndex = self.labelList.index(label.lower())
@@ -91,22 +91,21 @@ class Labeler:
             # throw exception if id is out of range
             else:
                 raise Exception("ID is out of range")
-                return False
+
         else:
-            print("The input value is not valid if you want to set the current label by ID please specify the ID by the keyword argument ID (eg : setCurrentLabel(ID = 3))")
-            
-            
+            print("The input value is not valid if you want to set the current label by ID \
+            please specify the ID by the keyword argument ID (eg : setCurrentLabel(ID = 3))")
+
     def getCurrentLabel(self):
         # check if the label stream is active
         if self.labelStreamerActive:
             # update the current label
-            self.streamLabels(__startStream__ = False)
+            self.streamLabels(__startStream__=False)
         
         # return current selected label
         return self.labelList[self.currentLabelIndex]
-    
-    
-    def streamLabels(self, timeInterval = 5, reset = False, __startStream__ = True):
+
+    def streamLabels(self,timeInterval=5, reset=False, __startStream__=True):
         # check if the stream is being initialized
         if __startStream__:
             # set label list iterator to zero
@@ -118,18 +117,16 @@ class Labeler:
                 self.streamTimeInterval = timeInterval
             else:
                 raise Exception("Time interval can not be less than or equal zero")
-                return False
             # check if the label list is not empty
             if self.labelList:
                 # activate the label stream
                 self.labelStreamerActive = True
                 # set the current label to the first label in the label list
-                self.setCurrentLabel(ID = self.labelStreamIterator)
+                self.setCurrentLabel(ID=self.labelStreamIterator)
                 self.streamerStartTime = time.time()
                 return True
             else:
                 raise Exception("No labels in the label list to stream")
-                return False
         # check if the current label is the last in the list
         if self.labelStreamIterator == self.labelBufferListLength - 1:
             # deactivate the label stream
@@ -140,18 +137,17 @@ class Labeler:
             # get current time
             self.streamerCurrentTime = time.time()
             # check if its time to update the current label
-            if((self.streamerCurrentTime - self.streamerStartTime) >= self.streamTimeInterval):
+            if(self.streamerCurrentTime - self.streamerStartTime >= self.streamTimeInterval):
                 # update the label iterator
                 self.labelStreamIterator = self.labelStreamIterator+1
                 # set current label to the new value
-                self.setCurrentLabel(ID = self.labelStreamIterator)
+                self.setCurrentLabel(ID=self.labelStreamIterator)
                 # update the start time
                 self.streamerStartTime = time.time()
     
     def cancelStream(self):
         # deactivate the label stream
         self.labelStreamerActive = False
-        
-    
+
     def printLabels(self):
         print(self.labelList)
