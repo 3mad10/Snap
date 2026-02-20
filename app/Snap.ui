@@ -29,6 +29,149 @@ color:#DFF8EB;
     }</string>
    </property>
    <layout class="QGridLayout" name="gridLayout_3">
+    <item row="4" column="1">
+     <widget class="QPushButton" name="SaveTrainingDataBtn">
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+color:#DFF8EB;
+background-color:#000F08;
+}</string>
+      </property>
+      <property name="text">
+       <string>Save Training Data</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QSlider" name="frameSlider">
+      <property name="orientation">
+       <enum>Qt::Orientation::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="1">
+     <widget class="QPushButton" name="LoadLabelsBtn">
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+color:#DFF8EB;
+background-color:#000F08;
+}</string>
+      </property>
+      <property name="text">
+       <string>Load Labels</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="0">
+     <widget class="QPushButton" name="btnLoad">
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+color:#DFF8EB;
+background-color:#000F08;
+}</string>
+      </property>
+      <property name="text">
+       <string>Load Video</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QGroupBox" name="MediaControl">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="title">
+       <string/>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <widget class="QPushButton" name="btnPrev">
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+color:#DFF8EB;
+background-color:#000F08;
+}</string>
+         </property>
+         <property name="text">
+          <string>Backwards</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnPlay">
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+color:#DFF8EB;
+background-color:#000F08;
+}</string>
+         </property>
+         <property name="text">
+          <string>▶</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnNext">
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="autoFillBackground">
+          <bool>false</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+color:#DFF8EB;
+background-color:#000F08;
+}</string>
+         </property>
+         <property name="text">
+          <string>Forward</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLabel" name="TrainingLabels">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel
+{
+color:#DFF8EB;
+background-color:#000F08;
+}</string>
+      </property>
+      <property name="text">
+       <string>Training Labels</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
     <item row="1" column="1">
      <widget class="QScrollArea" name="scrollArea">
       <property name="sizePolicy">
@@ -50,8 +193,8 @@ color:#DFF8EB;
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>150</width>
-         <height>415</height>
+         <width>160</width>
+         <height>418</height>
         </rect>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -132,161 +275,39 @@ background-color:#333333;
       </widget>
      </widget>
     </item>
-    <item row="5" column="1">
-     <widget class="QPushButton" name="LoadLabelsBtn">
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton{
-color:#DFF8EB;
-background-color:#000F08;
-}</string>
-      </property>
-      <property name="text">
-       <string>Load Labels</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="1">
-     <widget class="QLabel" name="TrainingLabels">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>14</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QLabel
-{
-color:#DFF8EB;
-background-color:#000F08;
-}</string>
-      </property>
-      <property name="text">
-       <string>Training Labels</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignmentFlag::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="1">
-     <widget class="QPushButton" name="SaveTrainingDataBtn">
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton{
-color:#DFF8EB;
-background-color:#000F08;
-}</string>
-      </property>
-      <property name="text">
-       <string>Save Training Data</string>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="0">
-     <widget class="QPushButton" name="btnLoad">
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton{
-color:#DFF8EB;
-background-color:#000F08;
-}</string>
-      </property>
-      <property name="text">
-       <string>Load Video</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="0" rowspan="2">
-     <widget class="QLabel" name="frameLabel">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-        <horstretch>1</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="text">
-       <string>TextLabel</string>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="0">
-     <widget class="QGroupBox" name="MediaControl">
-      <property name="styleSheet">
-       <string notr="true"/>
-      </property>
-      <property name="title">
-       <string/>
-      </property>
-      <layout class="QHBoxLayout" name="horizontalLayout_3">
-       <item>
-        <widget class="QPushButton" name="btnPrev">
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QPushButton{
-color:#DFF8EB;
-background-color:#000F08;
-}</string>
-         </property>
-         <property name="text">
-          <string>Backwards</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="btnPlay">
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QPushButton{
-color:#DFF8EB;
-background-color:#000F08;
-}</string>
-         </property>
-         <property name="text">
-          <string>▶</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="btnNext">
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="autoFillBackground">
-          <bool>false</bool>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QPushButton{
-color:#DFF8EB;
-background-color:#000F08;
-}</string>
-         </property>
-         <property name="text">
-          <string>Forward</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </item>
-    <item row="3" column="0">
-     <widget class="QSlider" name="frameSlider">
-      <property name="orientation">
-       <enum>Qt::Orientation::Horizontal</enum>
-      </property>
-     </widget>
+    <item row="1" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="frameLabel">
+        <property name="text">
+         <string>Original Frame</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Policy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>21</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="processedLabel">
+        <property name="text">
+         <string>Processed Frame</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
    </layout>
   </widget>
@@ -297,7 +318,7 @@ background-color:#000F08;
      <x>0</x>
      <y>0</y>
      <width>819</width>
-     <height>33</height>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuF">
@@ -317,22 +338,5 @@ background-color:#000F08;
   </widget>
  </widget>
  <resources/>
- <connections>
-  <connection>
-   <sender>btnLoad</sender>
-   <signal>clicked()</signal>
-   <receiver>frameLabel</receiver>
-   <slot>show()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>383</x>
-     <y>586</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>394</x>
-     <y>454</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>
